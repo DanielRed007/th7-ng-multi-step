@@ -12,7 +12,7 @@ export class StepIndexComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  goToSteps() {
-    this.router.navigateByUrl("/step-1");
+  goToStep1() {
+    this.router.navigateByUrl("multi-step/step-1");
   }
 }
