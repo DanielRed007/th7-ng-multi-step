@@ -1,5 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
-import { FormBuilder, FormGroup } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
 
 @Component({
@@ -10,13 +10,29 @@ import { Router } from "@angular/router";
 })
 export class Step1Component implements OnInit {
   public step1Form: FormGroup | undefined;
+  public inputConfig = [
+    {
+      label: "First Name",
+      id: "inputFirstName",
+      type: "text",
+      error: "Field is required",
+    },
+  ];
 
   constructor(private router: Router, private fb: FormBuilder) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.initForm();
+  }
 
   initForm() {
-    this.step1Form = this.fb.group({});
+    this.step1Form = this.fb.group({
+      firstName: ["", Validators.required],
+      lastName: ["", Validators.required],
+      dateOfBirth: [null, Validators.required],
+      gender: ["", Validators.required],
+      nationality: ["", Validators.required],
+    });
   }
 
   goToStep2() {

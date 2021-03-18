@@ -5,11 +5,10 @@ import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { MultiStepModule } from "./components/multi-step/multi-step.module";
-import { SharedModule } from "./shared/shared.module";
 
 @NgModule({
   declarations: [AppComponent, NotFoundComponent],
-  imports: [BrowserModule, AppRoutingModule, MultiStepModule, SharedModule],
+  imports: [BrowserModule, AppRoutingModule, MultiStepModule],
   providers: [],
   bootstrap: [AppComponent],
 })

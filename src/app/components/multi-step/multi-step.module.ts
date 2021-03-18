@@ -8,6 +8,7 @@ import { Step2Component } from "./step2/step2.component";
 import { Step3Component } from "./step3/step3.component";
 import { CheckoutComponent } from "./checkout/checkout.component";
 import { ReactiveFormsModule } from "@angular/forms";
+import { SharedModule } from "src/app/shared/shared.module";
 
 @NgModule({
   declarations: [
@@ -17,6 +18,11 @@ import { ReactiveFormsModule } from "@angular/forms";
     Step3Component,
     CheckoutComponent,
   ],
-  imports: [CommonModule, MultiStepRoutingModule, ReactiveFormsModule],
+  imports: [
+    CommonModule,
+    MultiStepRoutingModule,
+    ReactiveFormsModule,
+    SharedModule,
+  ],
 })
 export class MultiStepModule {}
