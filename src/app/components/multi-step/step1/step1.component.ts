@@ -1,4 +1,5 @@
 import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
+import { FormBuilder, FormGroup } from "@angular/forms";
 import { Router } from "@angular/router";
 
 @Component({
@@ -8,9 +9,15 @@ import { Router } from "@angular/router";
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class Step1Component implements OnInit {
-  constructor(private router: Router) {}
+  public step1Form: FormGroup | undefined;
+
+  constructor(private router: Router, private fb: FormBuilder) {}
 
   ngOnInit(): void {}
+
+  initForm() {
+    this.step1Form = this.fb.group({});
+  }
 
   goToStep2() {
     this.router.navigateByUrl("multi-step/step-2");
